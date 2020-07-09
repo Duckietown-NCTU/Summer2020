@@ -9,9 +9,9 @@ from tutorial.srv import *
 def mul_two_ints_client(x, y):
     rospy.wait_for_service('mul_two_ints')
     try:
-        mul_two_ints = rospy.ServiceProxy('mul_two_ints', MulTwoInts)
-        resp1 = mul_two_ints(x,y)
-        return resp1.multiply
+        mul_two_ints = #Todo
+        resp1 = #Todo
+        return resp1.#Todo
 	#Complete your client request function here
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)
