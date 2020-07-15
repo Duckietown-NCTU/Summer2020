@@ -1,8 +1,0 @@
-prefix=/home/hcc2020/summer_2020/week1/ROS-tutorial/catkin_ws/devel
-
-Name: tutorial
-Description: Description of tutorial
-Version: 0.0.0
-Cflags: -I/home/hcc2020/summer_2020/week1/ROS-tutorial/catkin_ws/devel/include
-Libs: -L${prefix}/lib 
-Requires: message_runtime
