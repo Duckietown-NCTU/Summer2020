@@ -18,19 +18,20 @@ fi
 
 BASH_OPTION=bash
 
-goal_dir=${current_dir//$host_dir/$container_dir}
+current_dir="$(pwd)"
+echo ${current_dir}
 
 docker run --gpus all -it \
     -e DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
     -e XAUTHORITY=$XAUTH \
     -v "$XAUTH:$XAUTH" \
-    -v "/home/$USER/summer_2020/week5/Mask_RCNN:/home/detectron2" \
     -v "/tmp/.X11-unix:/tmp/.X11-unix" \
+    -v "${current_dir}:/home/arg/detectron2" \
     -v "/etc/localtime:/etc/localtime:ro" \
     -v "/dev:/dev" \
     -v "/var/run/docker.sock:/var/run/docker.sock" \
-    -v "/home/$USER/.bashrc:/home/detectron2/.bashrc" \
+    -v "/home/$USER/.bashrc:/home/arg/.bashrc" \
     --network host \
     --rm \
     --privileged \

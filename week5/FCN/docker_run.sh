@@ -39,12 +39,14 @@ else
   DOCKER_OPTS="$DOCKER_OPTS --gpus all"
 fi
 
+current_dir="$(pwd)"
+echo ${current_dir}
 docker run -it \
   -e DISPLAY \
   -e QT_X11_NO_MITSHM=1 \
   -e XAUTHORITY=$XAUTH \
   -v "$XAUTH:$XAUTH" \
-  -v "/home/$USER/summer_2020/week5/FCN:/home/sis_2020/" \
+  -v "${current_dir}:/home/sis_2020/" \
   -v "/tmp/.X11-unix:/tmp/.X11-unix" \
   -v "/etc/localtime:/etc/localtime:ro" \
   -v "/dev:/dev" \
