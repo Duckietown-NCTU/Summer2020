@@ -66,13 +66,17 @@ echo -e "Use the port: ${GREEN}${host_vnc_port} as VNC_PORT.${NC}"
 echo -e "Use the port: ${GREEN}${host_jupyter_port} as JUPYTER_PORT.${NC}"
 echo -e "Use the port: ${GREEN}${host_tensorboard_port} as TENSORBOARD_PORT.${NC}"
 
+dir=${PWD}
+echo "mount dir:${dir}"
+
 docker run -it --rm --name="ai-course-vnc${host_vnc_port}" \
             -e RESOLUTION=1600x900 \
             -p ${host_vnc_port}:80 \
             -p ${host_jupyter_port}:8888 \
             -p ${host_tensorboard_port}:6006 \
-            -v "/home/$USER/ai-course-2019:/home/root/ai-course-2019" \
+            -v "${dir}:/home/root/week6/DQN" \
             -v "/dev:/dev" \
+            --gpus all \
             --privileged \
             --rm \
             --hostname aicourse \
