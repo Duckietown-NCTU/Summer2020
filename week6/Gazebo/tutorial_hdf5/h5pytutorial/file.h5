@@ -1,0 +1,3 @@
+import h5py
+file = h5py.File (“file.h5″, “w")
+file.close ()

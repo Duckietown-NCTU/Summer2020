@@ -1,0 +1,35 @@
+Source Code
+https://github.com/richtong888/2020summerintern_week6
+
+#important!!! this tutorial has no docker, so you need to debag and install package by yourself!!!
+
+cd ~/catkin_ws/src
+
+#Clone from github
+
+git clone https://github.com/richtong888/2020summerintern_week6
+
+cd ~/catkin_ws
+
+#if it comes out with error, plz ask for TA
+
+catkin_make
+
+cd ~/catkin_ws/devel
+source setup.bash
+
+roslaunch robot_car_move_gazebo robot_car_move.launch
+
+#open another terminal
+
+cd ~/catkin_ws/devel
+source setup.bash
+roscd robot_car_move_gazebo
+cd scripts/
+python3 robot_car_move.py
+
+#you need to run by python3, you need to do 'sudo pip3 install' or 'pip3 install --upgrade pip'
+
+#if you success, you will see the car go through.
+
+#mission!!!!! use keyboard to control car in gazebo and makes it turn left right
